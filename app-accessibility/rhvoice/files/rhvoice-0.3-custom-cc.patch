@@ -1,0 +1,11 @@
+--- RHVoice/SConstruct.orig	2014-06-26 17:43:38.687079659 +0400
++++ RHVoice/SConstruct	2014-06-26 17:48:14.827484672 +0400
+@@ -38,6 +38,8 @@ if sys.platform!="win32":
+     vars.Add("datadir","Data installation directory","$prefix/share")
+     vars.Add("sysconfdir","A directory for configuration files","$prefix/etc")
+     vars.Add("DESTDIR","Support for staged installation","")
++    vars.Add("CC","Custom C compiler to use",None)
++    vars.Add("CXX","Custom C++ compiler to use",None)
+     vars.Add(EnumVariable("enable_shared","Build a shared library","yes",["yes","no"],ignorecase=1))
+ vars.Add("FLAGS","Additional compiler/linker flags")
+ vars.Add("CCFLAGS","C compiler flags")
