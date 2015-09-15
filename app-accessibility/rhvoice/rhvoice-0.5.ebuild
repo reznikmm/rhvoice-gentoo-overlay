@@ -8,22 +8,23 @@ inherit vcs-snapshot scons-utils eutils multilib toolchain-funcs
 
 DESCRIPTION="a Russian speech synthesizer"
 HOMEPAGE="https://github.com/Olga-Yakovleva/RHVoice"
-SRC_URI="https://github.com/Olga-Yakovleva/RHVoice/archive/3e31edced402a08771d2c48c73213982cbe9333e.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Olga-Yakovleva/RHVoice/archive/0.5.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=app-accessibility/flite-1.4
-		>=dev-libs/libunistring-0.9.3
-		dev-libs/expat
-		>=dev-libs/libpcre-8.10
-		media-sound/sox"
+DEPEND="dev-cpp/glibmm
+		media-libs/libao"
+# Should work with any of these instead of libao, but I haven't tried
+#media-sound/pulseaudio
+#media-libs/portaudio
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.3-custom-cc.patch
+	epatch "${FILESDIR}"/${PN}-0.5-custom-cc.patch
 }
 
 src_configure() {

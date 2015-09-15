@@ -1,0 +1,13 @@
+diff --git a/SConstruct b/SConstruct
+index 9fec74a..be2fe7a 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -120,6 +120,8 @@ def create_user_vars():
+         vars.Add("sysconfdir","A directory for configuration files","$prefix/etc")
+         vars.Add("servicedir",".service file installation directory","$datadir/dbus-1/services")
+         vars.Add("DESTDIR","Support for staged installation","")
++        vars.Add("CC","Custom C compiler to use",None)
++        vars.Add("CXX","Custom C++ compiler to use",None)
+         vars.Add(BoolVariable("enable_shared","Build a shared library",True))
+     if sys.platform=="win32":
+         suffixes=["32","64"]
