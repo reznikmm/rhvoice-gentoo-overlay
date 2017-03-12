@@ -36,6 +36,7 @@ src_configure() {
 		sysconfdir="${EPREFIX}"/etc
 		enable_shared=yes
 		CCFLAGS=" ${CFLAGS}"
+		CXXFLAGS="${CXXFLAGS} -std=c++11"
 		LINKFLAGS="${LDFLAGS}"
 		debug=no
 	)
